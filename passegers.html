@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>CheckPassengers</title>
+</head>
+<body>
+<script>
+var passengers = [{name:"Jane Doloop", paid: true, ticket: "premiumeconomy"},
+					{name: "Dr. Evel", paid: true, ticket: "firstclass"},
+					{name: "Sue Property", paid: false, ticket: "firstclass"},
+					{name: "John Funcall", paid: true, ticket: "coach"}];
+
+function processPassengers (passengers, testFunction) {
+	for (var i=0; i< passengers.length; i++) {
+	if (testFunction(passengers[i])) {
+	return false;
+	}
+}
+return true;
+}
+
+function checkNoFlyList(passenger) {
+return (passenger.name ==="Dr. Evel");
+}
+function checkNotPaid(passenger) {
+return (!passenger.paid);
+}
+function printPassenger (passenger) {
+var message = passenger.name;
+if (passenger.paid === true){
+massage = message +" has paid";
+}else{
+message = message+ "has not paid";
+}
+console.log (message);
+return false;
+}
+
+
+function servePassengers (passengers) {
+for (var i=0; i<passengers.length; i++) {
+serveCustomer(passengers [i]);
+}
+}
+servePassengers (passengers);
+
+function createDrinkOrder (passenger) {
+var orderFunction;
+if (passenger.ticket === "firstclass") {
+orderFunction = function() {
+alert ("would you like a coctail or wine?");
+};
+}else if (passenger.ticket === "premiumeconomy") {
+orderFunction = function() {
+alert ("woud you like a water or cola or wine?");
+};
+}else {
+orderFunction = function() {
+alert ("Your choice is cola or water.");
+};
+}
+return orderFunction;
+}
+function createDinnerOrder (passenger) {
+var orderFunction;
+if (passenger.ticket === "firstclass") {
+orderFunction = function() {
+alert ("Woud you like chicken or pasta?");
+};
+}else if (passenger.ticket === "premiumeconomy") {
+orderFunction = function() {
+alert ("woud you like snack box or cheese plate?");
+};
+}else {
+orderFunction = function () {
+alert ("Woud you like peanuts or pretzels");
+};
+}
+return orderFunction;
+}
+function serveCustomer (passenger) {
+var getDrinkOrderFunction = createDrinkOrder (passenger);
+var getDinnerOrderFunction = createDinnerOrder (passenger);
+getDrinkOrderFunction();
+getDinnerOrderFunction();
+getDrinkOrderFunction();
+getDinnerOrderFunction();
+getDrinkOrderFunction();
+getDinnerOrderFunction();
+}
+var allCanFly = processPassengers (passengers,checkNoFlyList);
+if (!allCanFly) {
+console.log ("The plane can't take off: we have a passenger on the no-fly-list.");
+}
+var allPaid = processPassengers (passengers,checkNotPaid); 
+if (!allPaid) {
+console.log ("The plane can't take off: not everyone has paid");
+}
+var allName = processPassengers(passengers, printPassenger);
+				
+</script>
+</body>
+</html>
