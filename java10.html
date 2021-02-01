@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Replacing String Content</h2>
+<p id="demo">Please visit a Microsoft</p>
+<button onclick ="myFunction()">Try it</button>
+<script>
+function myFunction() {
+var str = document.getElementById("demo").innerHTML;
+var n = str.replace("Microsoft", "w3school");
+document.getElementById("demo").innerHTML = n;
+}
+</script>
+</body>
+</html>
