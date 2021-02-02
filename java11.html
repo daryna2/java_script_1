@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>array</h2>
+<p id="demo"></p>
+<h2>you can also use the array.forEach</h2>
+<p id="foreach"></p>
+<script>
+var fruits,text,fLen,i;
+fruits = ["Banana","Orange","Apple","Mango"];
+fruits.push("Lemon");
+typeof fruits;
+fLen = fruits.length;
+text = "<ul>";
+for (i=0;i<fLen;i++) {
+text+="<li>" +fruits[i]+ "</li>";
+}
+text+="</ul>";
+document.getElementById("demo").innerHTML = text;
+var wears, result;
+wears = ["Skirt","Sweater","Cardigan","Shirt","Top","Jeans"];
+wears[wears.length] = "Boots";
+result = "<ul>";
+wears.forEach(myFunction);
+result += "</ul>";
+function myFunction(value) {
+result +="<li>"+value+"</li>";
+}
+document.getElementById("foreach").innerHTML = result;
+</script>
+</body>
+</html>
