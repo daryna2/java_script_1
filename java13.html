@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>array</h2>
+<p id="demo"></p>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<button onclick = "myFunction()">try it</button>
+<button onclick = "myFunction2()">try it</button>
+<h2>merging</h2>
+<p id="demo3"></p>
+<h2>Sorting Arrays</h2>
+<p id = "demo4"></p>
+<h2>Compare function</h2>
+<p id="demo5"></p>
+<p id="demo6"></p>
+<p id="demo7"></p>
+<script>
+fruits = ["Banana","Orange","Apple","Mango"];
+document.getElementById("demo").innerHTML = "Original Array:<br> "+ fruits;
+var fruits1 = fruits.sort();
+document.getElementById("demo4").innerHTML = fruits1;
+function myFunction() {
+var removed = fruits.splice(1,1,"Lemon","Kiwi");
+document.getElementById("demo1").innerHTML = "New Array:<br> "+ fruits;
+document.getElementById("demo2").innerHTML = "Removed Items:<br>" +removed;
+}
+var myGirls = ["Cecilie","Lone"];
+var myBoys = ["Emil","Gregor"];
+var myChildren = myGirls.concat(myBoys);
+document.getElementById("demo3").innerHTML = "My children:<br>" +myChildren;
+var points = [40,100,1,5,25,10,300,2,6,9];
+points.sort(function(a,b){return a-b});
+document.getElementById("demo5").innerHTML = points;
+points.sort(function(a,b){return b-a});
+document.getElementById("demo6").innerHTML = points;
+function myFunction2() {
+var points1 = [40,100,1,5,25,10,300,2,6,9];
+points1.sort(function(a,b){return 0,5 - Math.random()});
+document.getElementById("demo7").innerHTML = points1;
+}
+</script>
+</body>
+</html>
