@@ -1,0 +1,20 @@
+<html>
+<body>
+<h2>Distance between p1 and p2</h2>
+<p id = "demo"></p>
+<script>
+let points = [
+{x:5,y:7},
+{x:11,y:24}
+];
+points.dist = function() {
+let p1 = this[0];
+let p2 = this[1];
+let a  = p2.x - p1.x;
+let b = p2.y - p1.y;
+return Math.sqrt(a*a +b*b);
+};
+document.getElementById("demo").innerHTML = points.dist();
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+<body>
+<h2>sum of array</h2>
+<p id = "demo"></p>
+<p id = "demo1"></p>
+<p id = "demo2"></p>
+<script>
+let primes = [2,3,4,5,7];
+function sum (array) {
+let sum = 0;
+for (let x of array) {
+sum+=x;
+}
+return sum;
+}
+document.getElementById("demo").innerHTML = sum(primes);
+
+function factorial(n) {
+let product = 1;
+while(n>1) {
+product*=n;
+n--;
+}
+return product;
+}
+document.getElementById("demo1").innerHTML = factorial(4);
+
+
+function factorial2(n) {
+let i, product = 1;
+for(i=2; i<=n;i++)
+product*=i;
+return product;
+}
+document.getElementById("demo2").innerHTML = factorial2(10);
+</script>
+</body>
+</html>
